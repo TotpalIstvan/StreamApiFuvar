@@ -35,4 +35,11 @@ public class Fuvarok {
         }
     }
 
+    public long getFuvarszam() {
+        return fuvarLista.stream()
+                .count();
+    }
+
+
+
 }
