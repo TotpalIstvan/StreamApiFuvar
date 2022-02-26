@@ -42,4 +42,10 @@ public class Fuvarok {
 
 
 
+    public double getMerfold() {
+        return  fuvarLista.stream()
+                .mapToDouble(m -> m.getTavolsag())
+                .sum();
+    }
+
 }
