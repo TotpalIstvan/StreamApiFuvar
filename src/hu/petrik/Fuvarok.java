@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -46,6 +47,13 @@ public class Fuvarok {
         return  fuvarLista.stream()
                 .mapToDouble(m -> m.getTavolsag())
                 .sum();
+    }
+
+    public int getLeghosszabb() {
+        return fuvarLista.stream()
+                .map(t -> t.getIdotartam())
+                .max(Integer::compareTo)
+                .get();
     }
 
 }
