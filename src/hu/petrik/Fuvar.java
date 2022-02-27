@@ -14,11 +14,18 @@ public class Fuvar {
     public Fuvar(String s){
         String[] fuvars = s.split(";");
         this.taxi_id = Integer.parseInt(fuvars[0]);
+        String[] ido = fuvars[1].split(" ");
+        this.indulas = LocalDateTime.of(Integer.parseInt(ido[0].split("-")[0]), Integer.parseInt(ido[0].split("-")[1]), Integer.parseInt(ido[0].split("-")[2]), Integer.parseInt(ido[1].split(":")[0]), Integer.parseInt(ido[1].split(":")[1]), Integer.parseInt(ido[1].split(":")[2]));
         this.idotartam = Integer.parseInt(fuvars[2]);
         this.tavolsag = Double.parseDouble(fuvars[3].replace(",","."));
         this.viteldij = Double.parseDouble(fuvars[4].replace(",","."));
         this.borravalo = Double.parseDouble(fuvars[5].replace(",","."));
         this.fizetes_modja = fuvars[6];
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Taxi id: %-4d travel time: %-4d distance: %f price: %f tip: %f method: %-11s\n", taxi_id, idotartam, tavolsag, viteldij, borravalo, fizetes_modja);
     }
 
     public int getTaxi_id() {
